@@ -1,0 +1,33 @@
+<div class="main">
+    <div class="container">
+        <h1 class="text-success">{{"Search Results" | uppercase}}</h1>
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th>SL No.</th>
+                    <th>Character Name</th>
+                    <th>Species</th>
+                    <th>Birth Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; index as i">
+                    <td>
+                        {{i+1}}
+                    </td>
+                    <td>
+                        <a class="nav-link" [routerLink]="['/character', item.id]">
+                            {{item.name}}
+                        </a>
+                    </td>
+                    <td>
+                        {{item.speciesData.name}}
+                    </td>
+                    <td>
+                        {{item.birth_year}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="row characterDetail my-5">
+    <div class="col-md-3 col-left p-4">
+        <div class="">
+            <div class="d-flex justify-content-center align-item-center">
+                <div class="img my-5"></div>
+            </div>
+            <ul class="list-unstyled fw-normal pb-1 details" *ngIf="character">
+                <li>Name: {{character.name}}</li>
+                <li>Gender: {{character.gender}}</li>
+                <li>Height: {{character.height}}</li>
+                <li>Weigth: {{character.mass}}</li>
+                <li>Created at: {{character.created}}</li>
+                <li>Edited at: {{character.edited}}</li>
+                <li>Hair Color: {{character.hair_color}}</li>
+                <li>Eye Color: {{character.eye_color}}</li>
+                <li>Skin Color: {{character.skin_color}}</li>
+                <br>
+                <li class="fw-bold" *ngFor="let specie of species">
+                    Species : {{specie.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8 col-right p-4">
+        <div>
+            <h1 class="text-success">{{"film" |  uppercase}}</h1>
+            <ul class="list-unstyled fw-normal pb-1 small films">
+                <div class="text-center">
+                    <div *ngIf="loading" class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <ng-container *ngIf="!loading&&films.length == 0">
+                    <p>no data found</p>
+                </ng-container>
+                <li *ngFor="let film of films">
+                    <ul class="list-unstyled fw-normal pb-1 small">
+                        <li>Title: {{film.title}}</li>
+                        <li>Director: {{film.director}}</li>
+                        <li>Episode_id: {{film.episode_id}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h1 class="text-success">{{"vehicles" |  uppercase}}</h1>
+            <ul class="list-unstyled fw-normal pb-1 small films">
+                <div class="text-center">
+                    <div *ngIf="loading" class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <ng-container *ngIf="vehicles">
+                    <li *ngFor="let vehicle of vehicles">
+                        <ul class="list-unstyled fw-normal pb-1 small">
+                            <li>Name: {{vehicle.name}}</li>
+                            <li>Model: {{vehicle.model}}</li>
+                            <li>Speed: {{vehicle.max_atmosphering_speed}}</li>
+                        </ul>
+                    </li>
+                </ng-container>
+                <ng-container *ngIf="!loading&&vehicles.length==0">
+                    <p>no data found</p>
+                </ng-container>
+            </ul>
+        </div>
+        <div>
+            <h1 class="text-success">{{"starships" |  uppercase}}</h1>
+            <ul class="list-unstyled fw-normal pb-1 small films">
+                <div class="text-center">
+                    <div *ngIf="loading" class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <li *ngFor="let starship of starships">
+                    <ul class="list-unstyled fw-normal pb-1 small">
+                        <li>Name: {{starship.name}}</li>
+                        <li>Model: {{starship.model}}</li>
+                        <li>Speed: {{starship.max_atmosphering_speed}}</li>
+                    </ul>
+                </li>
+                <ng-container *ngIf="!loading&&starships.length == 0">
+                    <p>no data found</p>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>

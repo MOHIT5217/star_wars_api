@@ -1,0 +1,9 @@
+.main{
+    h1{
+        font-size: 25px;
+    }
+    .table>:not(caption)>*>*{
+        border: 2px solid #fff;
+        background-color: #e7e7e7;
+    }
+}

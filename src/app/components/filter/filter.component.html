@@ -1,0 +1,24 @@
+<div class="filter">
+    <h1 class="text-center text-success">{{"Filters" | uppercase}}</h1>
+    <div>
+        <select class="text-success w-100 p-2" id="film" [(ngModel)]="selectedFilm">
+            <option value="">Films</option>
+            <option *ngFor="let film of films" [value]="film.url">{{ film.title }}</option>
+        </select>
+    </div>
+    <div>
+        <select class="text-success" id="species" [(ngModel)]="selectedSpecies">
+            <option value="">Species</option>
+            <option *ngFor="let species of species" [value]="species.url">{{ species.name }}</option>
+        </select>
+    </div>
+    <div>
+        <label class="text-success fw-bold" for="startYear">Birth Year From:</label>
+        <input class="form-control" id="startYear" type="text" [(ngModel)]="birthYearRange.start" />
+        <label class="text-success fw-bold" for="endYear">To:</label>
+        <input class="form-control" id="endYear" type="text" [(ngModel)]="birthYearRange.end" />
+    </div>
+    <div class="text-center">
+        <button class="btn text-success fw-bold border-success my-2" (click)="onFilterChange()">Search</button>
+    </div>
+</div>

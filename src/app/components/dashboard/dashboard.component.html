@@ -1,0 +1,13 @@
+<div class="row my-5 dashboard">
+    <div class="col-md-3 col-left p-4">
+        <app-filter (filterChange)="onFilterChange($event)"></app-filter>
+    </div>
+    <div class="col-md-8 col-right p-4">
+        <app-main [data]="filteredCharacters"></app-main>
+        <div class="text-center">
+            <div *ngIf="loading" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>

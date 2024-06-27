@@ -1,0 +1,20 @@
+.navbar{
+    .container{
+        position: relative;
+        .navbar-brand.title{
+            font-size: 38px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .subtitle{
+            color: #fff;
+            position: absolute;
+            right: 15px;
+            bottom: 0px ;
+            @media(min-width:800px){
+                right: 0px;
+            }
+        }
+    }
+    
+}

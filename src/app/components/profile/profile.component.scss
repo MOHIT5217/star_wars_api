@@ -1,0 +1,39 @@
+.characterDetail {
+    justify-content: space-between;
+    h1{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .col-left {
+        background-color: #fff;
+        .img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #f1f1f1;
+        }
+
+        .details {
+            >li {
+                font-style: italic;
+
+                &:first-child {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .col-right {
+        background-color: #fff;
+        .films {
+            >li {
+                background-color: #f1f1f1;
+                padding: 15px;
+                border-radius: 12px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}
